@@ -13,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tabs/films/films.module').then(m => m.FilmsPageModule)
+              import('../../pages/films/films.module').then(m => m.FilmsPageModule)
           }
         ]
       },
@@ -23,7 +23,17 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tabs/serials/serials.module').then(m => m.SerialsPageModule)
+              import('../../pages/serials/serials.module').then(m => m.SerialsPageModule)
+          }
+        ]
+      },
+      {
+        path: 'games',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+                import('../../pages/games/games.module').then(m => m.GamesPageModule)
           }
         ]
       },
